@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="image">
+        <img [src]="track().imageUrl" [alt]="track().title + 'image'">
+    </div>
+    <div class="content">
+        <div class="music-info">
+            <span class="title">{{track().title}}</span>
+            <span class="album">Album: {{ track().album }}</span>
+        </div>
+        <span class="artists">{{ track().artists }}</span>
+        <a [href]="track().spotifyUrl" target="_blank" rel="noopener noreferrer" aria-label="Abrir no Spotify" class="url">Abrir</a>
+    </div>
+</div>

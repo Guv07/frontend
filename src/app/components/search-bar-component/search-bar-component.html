@@ -1,0 +1,21 @@
+<div class="search-container">
+    <input type="search" [formControl]="searchControl" placeholder="Pesquise uma música">
+    
+    @if (searchState$ | async ; as state) {
+        @if (searchControl.value.trim().length > 2) {
+            <div class="track-panel">
+                @if (state.loading) {
+                    <p>Buscando...</p>
+                } @else if (state.tracks.length === 0) {
+                    <p>Nenhuma música encontrada.</p>
+                } @else if (state.error) {
+                    <p>Ocorreu um erro ao buscar músicas.</p>
+                } @else {
+                    @for (track of state.tracks; track track.id) {
+                        <app-track-component [track]="track"></app-track-component>
+                    }
+                }
+            </div>
+        }
+    }
+</div>

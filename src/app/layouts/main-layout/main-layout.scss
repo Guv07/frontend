@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main{
+    min-width: 100dvw;
+    min-height: 100dvh;
+    overflow: hidden;
+    display: flex;
+}
+
+.navbar-container{
+    width: 20%;
+    height: 100dvh;
+}
+
+.app-container{
+    width: 80%;
+    height: 100dvh;
+}
+
+app-search-bar-component{
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
